@@ -1,0 +1,91 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.1.9
+-- Dumped by pg_dump version 9.1.9
+-- Started on 2018-12-09 05:28:30 VET
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 162 (class 3079 OID 11644)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 1861 (class 0 OID 0)
+-- Dependencies: 162
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 161 (class 1259 OID 24628)
+-- Dependencies: 5
+-- Name: datosPersonales; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE "datosPersonales" (
+    cedula integer NOT NULL,
+    nombre text,
+    fecha date,
+    sexo text
+);
+
+
+ALTER TABLE public."datosPersonales" OWNER TO postgres;
+
+--
+-- TOC entry 1853 (class 0 OID 24628)
+-- Dependencies: 161 1854
+-- Data for Name: datosPersonales; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "datosPersonales" (cedula, nombre, fecha, sexo) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1852 (class 2606 OID 24635)
+-- Dependencies: 161 161 1855
+-- Name: datosPersonales_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY "datosPersonales"
+    ADD CONSTRAINT "datosPersonales_pkey" PRIMARY KEY (cedula);
+
+
+--
+-- TOC entry 1860 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2018-12-09 05:28:30 VET
+
+--
+-- PostgreSQL database dump complete
+--
+
